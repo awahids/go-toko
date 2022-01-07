@@ -1,11 +1,13 @@
 package main
 
 import (
+  "fmt"
 	"log"
 	"net/http"
 
-	"github.com/awahids/tokoDistributor/database"
-	"github.com/awahids/tokoDistributor/entity"
+	// "github.com/awahids/tokoDistributor/database" //run localhost
+	// "github.com/awahids/tokoDistributor/entity" //run localhost
+  "github.com/replit/database-go" //run at replit.com
 	"github.com/awahids/tokoDistributor/handlers"
 	"github.com/gorilla/mux"
 )
@@ -19,7 +21,11 @@ func handlersRequest()  {
 
 func main() {
 	//database setUp
-	db := database.Database()
-	db.AutoMigrate(&entity.Users{})
+	// db := database.Database()
+	// db.AutoMigrate(&entity.Users{})
+  
+  database.Set("key", "value")
+  val, _ := database.Get("key")
+  fmt.Println(val)
 	handlersRequest()
 }

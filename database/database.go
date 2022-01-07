@@ -1,8 +1,14 @@
+import "os"
 package database
 
 import (
 	"fmt"
 	"os"
+  mySecret := os.Getenv("DB_USER")
+  mySecret := os.Getenv("DB_NAME")
+  mySecret := os.Getenv("DB_PORT")
+  mySecret := os.Getenv("DB_HOST")
+  mySecret := os.Getenv("DB_PASS")
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
